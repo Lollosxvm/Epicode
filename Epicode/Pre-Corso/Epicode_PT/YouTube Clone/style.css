@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body{
+    display: flex;
+    margin: 0px;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+#main{
+    width: 100%;
+}
+
+#content{
+    height: 100%;
+}
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar-icon{
+    padding: 2.5em;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    cursor:pointer
+}
+
+.sidebar-icon p {
+    margin:0;    
+}
+
+.sidebar-icon ion-icon{
+        font-size: 1.5em;
+}
+#topbar{
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#logo {
+    height: 50%;
+}
+#search-wrapper {
+    display:flex;
+    height: 50%;
+}
+#topbar-icons {
+    display: flex;
+
+}
+.topbar-icons ion-icon{
+    font-size: 2em;
+    margin:  0.5em;
+}
+#mic-icon ion-icon {
+    font-size: 1.7em ;
+    padding: 0 0.5em;
+}
+.search-btn {
+    padding: 0 0.7em;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3em;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .content-card {
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .content-card img {
+    width: 100%;
+  }
+
+  .card-body {
+    display: flex;
+    padding: 1em 0;
+  }
+
+  .card-body h6 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+
+  .card-body img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+  }

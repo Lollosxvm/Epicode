@@ -1,0 +1,43 @@
+.halfPage {
+    border-bottom: 3px solid #bbb;
+    margin: 50px 0px;
+}
+
+body {
+    max-width: 50%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: red;
+}
+
+table {
+    border-collapse:separate;
+    border:solid green 1px;
+    border-radius:6px;
+}
+td{
+    border: solid green 1px;
+}
+tr {
+    outline: red 1px dotted;
+}
+p {
+    margin: 10px;
+}
+
+.myFooter {
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.hiddenP {
+    visibility: hidden;
+}
+
+ 

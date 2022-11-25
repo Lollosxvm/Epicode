@@ -1,0 +1,41 @@
+
+@import url('link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&family=Prata&display=swap"');
+h2{
+    font-family:Arial, Helvetica, sans-serif
+}
+.header {
+    background-color:#222f3e;
+}
+.menu{
+   color: #ffffff;
+}
+.center_orange{
+    text-align: center;
+    color:#ffffff;
+    background-color:#f56600;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-top: 20px;
+}
+h4{
+   color:white;
+   align-items: center;
+   font-size:30px;
+}
+.img-1{
+    text-align: center;
+    color:#ffffff;
+    background-image: url('https://raw.githubusercontent.com/Lollosxvm/Week1-4/main/D3/assets/bg-image.png');
+    padding-top:20px;
+    padding-bottom:10px;
+}
+.related-product{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+}
+.related-product img{
+    border-radius: 5%;
+    width:300px;
+    height: 300px;
+}

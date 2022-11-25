@@ -1,0 +1,39 @@
+.img{          
+        background-image: url(image.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 550px;
+        width: 400px;
+        margin:auto;
+}
+.div-save{
+    text-align: right;
+}
+.button{
+    color:white;
+    background-color: red;
+    font-size: em;
+    border-radius: 30%;
+    border:0px;
+    padding:20px;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-top: 40px;
+}
+.icona{
+    color:black;
+    background-color: #eeeded;
+    font-size: 1.5em;
+    border-radius:50%;
+    border:0px;
+    padding:20px;
+    margin-left: 10px;
+    margin-right:20px;
+    margin-top: 350px;
+}
+.footer{
+    display:flex;
+    
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <!--
+        ESERCIZI HTML
+
+        1) Assegna un titolo per questa pagina
+        2) Crea un tag h1 con il contenuto che preferisci
+        3) Crea una lista ordinata con alcuni elementi al suo interno
+        4) Crea una tabella con 4 righe e 5 colonne
+        5) Aggiungi un'immagine a ogni seconda cella di ogni riga
+        6) Aggiungi un tag <a> ad ogni immagine
+        7) Unisci insieme 2 celle della tabella
+        8) Dividi la pagina inserendo una riga orizzontale
+        9) Crea un elemento contenitore con al suo interno un paragrafo e una lista non ordinata
+        10) Crea un footer contenente alcune informazioni sul creatore della pagina
+
+        ESERCIZI CSS
+
+        11) Assegna una larghezza massima al tag body e centralo nella pagina
+        12) Centra ogni tag h1
+        13) Cambia il colore di ogni link nella pagina
+        14) Crea una classe e assegnale un bordo
+        15) Fai in modo che la i bordi della tabella che hai creato siano arrotondati
+        16) Aggiungi un margine ad ogni paragrafo
+        17) Crea una classe che una volta assegnata cambi la dimensione e il peso del font
+        18) Crea una classe per nascondere un elemento
+        19) Aggiungi un bordo verde a ogni <td>
+        20) Aggiungi un bordo puntato rosso a ogni <tr> (nota: <tr> non accetta una proprietà "border")
+
+        ESERCIZI JAVASCRIPT
+
+        21) Date le variabili x = "John" e y = "Doe", mostra in console "John <> Doe"
+        22) Crea un oggetto con le seguenti proprietà: name, surname, email
+        23) Cancella la proprietà email dall'oggetto appena creato
+        24) Crea un array contenente 10 stringhe
+        25) Mostra in console ogni stringa del precedente array
+        26) Crea un array contenente 100 numeri random
+        27) Scrivi una funzione per trovare il valore massimo e il valore minimo dall'array appena creato
+        28) Crea un array di array, nel quale ogni array "figlio" ha 10 numeri random
+        29) Crea una funzione che riceve 2 array come parametri e ritorni quello con più elementi
+        30) Crea una funzione che riceve 2 array numerici come parametri e ritorna quello con la somma totale degli elementi maggiore
+
+        ESERCIZI SUL DOM
+
+        31) Seleziona l'elemento con id "container" nella pagina
+        32) Seleziona tutti gli elementi di tipo <td> nella pagina
+        33) Usa un ciclo per stampare in console il testo contenuto in ogni elemento <td> nella pagina
+        34) Scrivi una funzione per cambiare il titolo della pagina
+        35) Scrivi una funzione per aggiungere una nuova riga alla tabella nella pagina
+        36) Scrivi una funzione per aggiungere la classe "test" ad ogni riga nella tabella
+        37) Scrivi una funzione per aggiungere uno sfondo rosso a ogni link presente nella pagina
+        38) Mostra in console "Page loaded" quando la pagina ha finito di caricarsi
+        39) Scrivi una funzione per aggiungere nuovi elementi alla lista non ordinata nella pagina
+        40) Scrivi una funzione per svuotare una lista nella pagina
+
+        ESERCIZI EXTRA
+
+        41) Aggiungi un event listener in modo che compaia un alert quando il cursore passa sopra un link; l'alert deve mostrare la sua proprietà href
+        42) Crea un bottone che una volta cliccato nasconde ogni immagine nella pagina
+        43) Crea un bottone che una volta cliccato nasconde o mostra la tabella nella pagina
+        44) Crea una funzione per calcolare la somma di ogni numero contenuto in tutte le celle della tabella (se il contenuto è un numero)
+        45) Cancella l'ultima lettera dal titolo della pagina ogni volta che l'utente ci clicca sopra
+        46) Aggiungi un event listener in modo che cliccando un <td> nella pagina, questo cambi colore di sfondo
+        47) Aggiungi un bottone che una volta cliccato elimini un <td> a caso nella tabella
+        48) Aggiungi automaticamente un bordo rosa ad una cella della tabella quando il cursore ci passa sopra
+        49) Scrivi una funzione per creare una tabella con 4 righe e 3 colonne e aggiungerla alla fine della pagina
+        50) Scrivi una funzione per rimuovere l'ultima tabella presente nella pagina
+        
+    --><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+      <title>M2 D8</title>
+      <link rel="stylesheet" href="esercizi-css.css">
+    </head>
+    
+    <body cz-shortcut-listen="true">
+    
+      <h1>Il contenuto che preferisci</h1>
+      <ol>
+        <li> Primo elemento della lista</li>
+        <li> Secondo elemento della lista</li>
+        <li> Terzo elemento della lista</li>
+        <li> Quarto elemento della lista</li>
+        <li> Quinto elemento della lista</li>
+      </ol>
+      <table style="text-align: center; width: 100%;">
+        <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+        </tr>
+        <tr>
+          <td>A1</td>
+          <td>
+            <a href="https://epicode.com/it/">
+              <img
+                src="https://media-assets.wired.it/photos/615db921d8b66b13086d090c/1:1/w_590,h_590,c_limit/wired_placeholder_dummy.png"
+                width="30px" alt="labrador felice">
+            </a>
+          </td>
+          <td>A3</td>
+          <td colspan="2">A4+A5</td>
+        </tr>
+        <tr >
+          <td>B1</td>
+          <td>
+            <a href="https://epicode.com/it/">
+              <img src="https://www.dottorbauedottormiao.it/images/site_blog_art/11/image/avere-un-cane.jpg?box=1920x900"
+                width="30px" alt="labrador triste">
+            </a>
+          </td>
+          <td>B3</td>
+          <td>B4</td>
+          <td>B5</td>
+        </tr>
+        <tr>
+          <td>C1</td>
+          <td>
+            <a href="https://epicode.com/it/">
+              <img src="https://media-assets.vanityfair.it/photos/6304fe8f1badbc17ff3f3087/16:9/w_2560%2Cc_limit/cani.jpg"
+                width="30px" alt="maltese felice">
+            </a>
+          </td>
+          <td>C3</td>
+          <td>C4</td>
+          <td>C5</td>
+        </tr>
+        <tr>
+          <td>D1</td>
+          <td>
+            <a href="https://epicode.com/it/">
+              <img src="https://cdn.onb.it/2021/11/cane.jpg" width="30px" alt="cane meticcio triste">
+            </a>
+          </td>
+          <td>D3</td>
+          <td>D4</td>
+          <td>D5</td>
+        </tr>
+      </table>
+      <div class="halfPage"> </div>
+      <div>
+        <p>
+          Questo è il paragrafo che precede la lista non ordinata
+        </p>
+        <ul id="table">
+          <li>Elemento della lista 1</li>
+          <li>Elemento della lista 2</li>
+          <li>Elemento della lista 3</li>
+          <li>Elemento della lista 4</li>
+          <li>Elemento della lista 5</li>
+        </ul>
+      </div>
+      <button onclick="Oscuraimg()">Oscurale le img</button>
+      <button onclick="OscuraTab()">Oscurale la tab</button>
+      <footer>
+        <div class="myFooter">© Copyright <a
+            href="https://it.linkedin.com/in/lorenzo-sijinardi?trk=public_profile_browsemap&original_referer=https%3A%2F%2Fwww.google.com%2F">
+            Lorenzo Sijinardi</a> , per qualcosa sull'autore visita pure il mio profilo Linkedin
+          <p class="hiddenP"> La volontà è molta, la comprensione non proporzionata alla
+            volontà
+          </p>
+        </div>
+      </footer>
+    
+    </body>
+    <script src="esercizi-js.js"></script>
+    <script src="esercizi-dom.js"></script>
+    
+    </html>

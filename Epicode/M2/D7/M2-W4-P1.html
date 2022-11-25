@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="top-h1" onmouseover ="changeTitle(),addClassToTitle()">Questo è il titolo della pagina</h1>
+      <h2>Questo è il sottotitolo della pagina</h2>
+    </header>
+
+    <main>
+      <hr />
+
+      <ul id="firstList">
+        <li>Primo</li>
+        <li>Secondo</li>
+        <li>Terzo</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>Primo</li>
+        <li>Secondo</li>
+        <li>Terzo</li>
+      </ul>
+
+      <a href="epicode.com" onmouseover="changeUrls()">Questo link porta all'homepage di EPICODE</a>
+
+      <div>
+        <p onmouseover="changePcontent()">Questo testo è qui solo per gli esercizi</p>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="input-field"
+          placeholder="input field per gli esercizi"
+        />
+      </div>
+    </div>
+
+    <div>
+      <p>Anche questo testo è qua solamente per gli esercizi!</p>
+      <h2 style="color: red">
+        Salva questa pagina sul tuo computer e aprila con VSCode per vedere le
+        domande!
+      </h2>
+    </div>
+    <script>
+      /* ESERCIZIO 1
+       Scrivi una funzione per cambiare il titolo del documento in qualcos'altro.*/
+      
+      function changeTitle(){
+      const title = document.getElementById('top-h1');
+      title.innerText = "Qualcos'altro";
+      console.log('function changeTitle executed');
+      }
+
+      /* ESERCIZIO 2
+       Scrivi una funzione per cambiare la classe del titolo della pagina in "myHeading".
+      */
+      //const addClassToTitle = function () {}
+
+      function addClassToTitle() {
+      let element = document.getElementById('top-h1');
+      element.className += ' myHeading';
+      console.log('function class executed');
+      }
+
+      /* ESERCIZIO 3
+       Scrivi una funzione per cambiare il contenuto di tutti i p che sono discendenti di un div.
+      */
+        //const changePcontent = function () {  }
+        function changePcontent (){
+        const element = document.createElement("p");
+        const textNode = document.createTextNode("contenuto cambiato");
+        element.appendChild(textNode);
+        const p = document.getElementById("p");
+        p.replaceChild(element, p.children[0]);
+        console.log("element list changed");
+      }
+    
+
+      /* ESERCIZIO 4
+       Scrivi una funzione per cambiare la proprietà href di ogni link a https://www.google.com
+      */
+       
+        const changeUrls = () => {
+        const modLinks = document.querySelectorAll('a');
+
+        for(const link of modLinks){
+          link.href = 'https://www.google.com';
+        }
+      }
+
+      
+      
+      /* ESERCIZIO 5
+       Scrivi una funzione per aggiungere un nuovo elemento alla seconda lista non-ordinata.
+      */
+
+        const addToTheSecond = (content) => {
+        const newLi = document.createElement('li');
+        newLi.innerHTML = content;
+
+        const ul = document.getElementById('secondList');
+        ul.appendChild(newLi);
+      }
+      }
+
+      /* ESERCIZIO 6
+       Scrivi una funzione per aggiungere un secondo paragrafo al primo div.
+      */
+
+       const addParagraph = (content) => {
+        const firstDiv = document.querySelector('div p').parentNode;
+        const newP = document.createElement('p');
+        newP.innerHTML = content;
+        firstDiv.appendChild(newP); 
+      }
+
+      /* ESERCIZIO 7
+       Scrivi una funzione per far scomparire la prima lista non-ordinata.
+      */
+
+      const firstUlDisappear = () => {
+        document.getElementById('firstList').style.display = 'none';
+      }
+
+      /* ESERCIZIO 8
+       Scrivi una funzione per rendere verde lo sfondo di ogni lista non-ordinata.
+      */
+
+       const paintItGreen = () => {
+        const allUl = document.querySelectorAll('ul');
+        for(const el of allUl){
+          el.style.backgroundColor = 'green';
+        }
+      }
+
+      /* ESERCIZIO 9
+       Rendi il tag h1 capace di cambiare colore del testo ogni volta che l'utente ci clicca sopra.
+      */
+
+      const makeItClickable = () => {
+        const h1Clickable = document.querySelector('h1');
+        h1Clickable.addEventListener('click', addClassToTitle);
+      }
+
+      /* ESERCIZIO 10
+       Cambia il testo del footer con qualcos'altro quando l'utente ci clicca sopra.
+      */
+
+      const changeFooterText = () => {
+        const footer = document.querySelector('footer');
+        footer.addEventListener('click', event => {
+          footer.innerText = "Qualche altro testo";
+        });
+      }
+      /* ESERCIZIO 11
+       Aggiungi un event listener al campo di testo nella pagina e fai in modo che dopo ogni lettera il suo valore venga mostrato in console.
+      */
+       const inputField = document.getElementById('input-field');
+      inputField.addEventListener('input', event => {
+        console.log(event.target.value);
+      })
+
+
+      /* ESERCIZIO 12
+       Crea un messaggio di benvenuto con un alert quando la pagina ha finito di caricarsi.
+      */
+
+       window.onload = () => {
+        alert('Benvenuti nella pagina!');
+      }
+
+      /* ESERCIZIO 13
+       Utilizza tag HTML5 per assegnare il corretto contenuto semantico alle differenti sezioni della pagina.
+      */
+    </script>
+  </main>
+</html>

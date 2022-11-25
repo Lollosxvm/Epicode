@@ -1,0 +1,83 @@
+body{
+  text-align: center;
+
+}
+.img1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.subtitle{
+  font-size: 12px;
+  margin-top: 20px;
+  background-color: #fdfbf1;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-top-style: solid;
+border-top-color: #fee8af;
+}
+h1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 50px;
+}
+.p2{
+ font-weight: bold;
+ color: #999999;
+}
+#div3{
+  border-left: solid;
+  border-color: #ffebbb;
+  text-align: left;
+  padding-left: 30px;
+  margin-left: 300px;
+;
+}
+.p3{
+color:#b64a14;
+font-weight: bold;
+
+}
+.title-recipe{
+border-bottom: 2px solid;
+border-color: #eefbfb;
+}
+.method{
+  font-size:20px;
+  font-weight: 50;
+  border-bottom: 2px solid;
+  border-color: #eefbfb;
+  padding-bottom: 20px;
+}
+.ingredients{
+  text-align: left;
+  padding-left: 30px;
+  margin-left: 300px;
+}
+h4{
+  text-align: left;
+  padding-left: 30px;
+  margin-left: 300px;
+  }
+.list{
+  text-align: left;
+  padding-left: 30px;
+  margin-left: 300px;
+}
+h3{
+  text-align: left;
+  padding-left: 30px;
+  margin-left: 300px;
+}
+.p4{
+  text-align: left;
+  padding-left: 40px;
+  margin-left: 300px;
+}
+.footer{
+  text-align: left;
+  padding-left: 10px;
+  margin-left: 300px;
+}

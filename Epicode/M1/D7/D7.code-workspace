@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Epicode"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "D7"
+	}
+}

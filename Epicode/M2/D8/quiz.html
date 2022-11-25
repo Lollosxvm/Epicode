@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      section {
+        text-align: center;
+      }
+
+      main {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 20%;
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <header>QUIZZETTONE</header>
+
+  <main>
+    <section id="question">domanda?</section>
+
+    <section id="answers">
+      <button>risposta A</button> <button>risposta B</button>
+    </section>
+
+    <section id="score">11</section>
+  </main>
+  <!--
+        QUIZ GAME!
+
+        REGOLE:
+        / Il giocatore deve indovinare il maggior numero di risposte possibile
+        / Ogni risposta corretta vale 1 punto
+        / Le domande possono essere a risposta multipla oppure vero/falso
+        / Alla fine della partita il giocatore deve sapere il proprio risultato
+
+        DOMANDE:
+        / Puoi prenderle da questo URL (http://bit.ly/strive_QUIZZ) oppure puoi creare le tue
+        / Possono essere a risposta multipla oppure vero/falso
+
+        SUGGERIMENTI PER L'ESERCIZIO:
+        / Memorizza il punteggio totale dell'utente in una variabile
+        / Memorizza in una variabile questionNumber a quale domanda il giocatore sta rispondendo
+        / Quando questionNumber diventa maggiore del numero totale delle domande, la partita è finita e devi mostrare il punteggio
+        / Memorizza le domande in una variabile (oppure recuperale direttamente dall'URL usando AJAX, se già sai come farlo!)
+        / Comincia con i requisiti base, se ti avanza tempo prosegui con gli EXTRA
+        / Verifica tramite la console che il flow dell'applicazione sia corretto, in modo che non ci siano problemi nell'esecuzione
+
+        EXTRA:
+        / Mostra immediatamente al giocatore una volta selezionata la risposta se ha fatto punto oppure no
+        / Presenta le domande al giocatore una alla volta, invece di mostrargliele tutte insieme
+        / Permetti al giocatore di selezionare il livello di difficoltà e il numero delle risposte (puoi recuperarle da qui https://opentdb.com/api.php?amount=10&category=18&difficulty=easy modificando nell'URL i parametri "amount")
+          e "difficulty"
+    --><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+  </head>
+  <body cz-shortcut-listen="true">
+    <script>
+      let questions = [];
+      let questionIndex;
+      let score = 0;
+
+      const currentQuestion = () => questions[questionIndex];
+
+      const displayNextQuestion = async () => {
+        if (questionIndex >= questions.length - 1) {
+          alert('Finito! Il tuo punteggio: ' + score);
+          await resetQuiz();
+        }
+        if (questionIndex !== undefined) {
+          questionIndex++;
+        } else {
+          // initialize
+          questionIndex = 0;
+          displayScore();
+        }
+        document.getElementById('question').innerHTML =
+          currentQuestion().question;
+        displayAnswers();
+      };
+
+      const displayAnswers = () => {
+        const cq = currentQuestion();
+        const wrongAnswers = cq.incorrect_answers;
+        const rightAnswer = cq.correct_answer;
+        const allAnswers = [rightAnswer, ...wrongAnswers];
+        const section = document.getElementById('answers');
+        section.innerHTML = '';
+        for (const answer of allAnswers) {
+          const btn = document.createElement('button');
+          btn.innerHTML = answer;
+          btn.onclick = onAnswered;
+          btn.value = answer;
+          section.appendChild(btn);
+        }
+      };
+
+      const displayScore = () => {
+        document.getElementById('score').innerHTML = score;
+      };
+
+      const onAnswered = async event => {
+        console.log(event);
+        const userAnswer = event.target.value;
+        if (userAnswer === currentQuestion().correct_answer) {
+          score++;
+        }
+
+        displayScore();
+        await displayNextQuestion();
+      };
+
+      const resetQuiz = async () => {
+        questionIndex = undefined;
+        score = 0;
+        await fetchQuestions();
+      };
+
+      const fetchQuestions = async () => {
+        const response = await fetch(
+          'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy'
+        );
+        const data = await response.json();
+        questions = data.results;
+      };
+
+      window.onload = async () => {
+        await fetchQuestions();
+        displayNextQuestion();
+      };
+
+      // Come calcolare il punteggio? Puoi farlo in 2 modi:
+      // Se stai mostrando al giocatore tutte le domande in un colpo solo, seleziona tutti i radio buttons e controlla se la risposta selezionata
+      // è quella corretta.
+      // Se stai mostrando al giocatore le domande una alla volta, basta aggiungere o no 1 punto ogni volta che viene selezionata una risposta.
+    </script>
+  </body>
+</html>

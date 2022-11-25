@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+
+
+const marco = {
+  name: 'Marco',
+  lastName: 'Rossi',
+  isAmbassador: true,
+}
+
+const paul = {
+  name: 'Paul',
+  lastName: 'Flynn',
+  isAmbassador: false,
+}
+
+const amy = {
+  name: 'Amy',
+  lastName: 'Reed',
+  isAmbassador: false,
+}
+
+const prices = [34, 5, 2]
+const shippingCost = 50
+
+
+function finalPrice(buyer,prices,shippingCost) {
+    let total = 0;
+    //sommo tutti i prezzi e trovo il totale
+    for(const price of prices){
+        total += price;
+    }
+
+//sconto del 30% per gli ambassador
+if(buyer.isAmbassador){
+    const discount = (total/100)*30;
+    total -= discount;
+}
+//applico shipping cost su ordini <100
+if (total  < 100) {
+    total += shippingCost;
+     
+}
+return total;
+}
+
+console.log("Totale carrello ->: " + finalPrice(marco, prices, shippingCost));
+
+
+</script>
+
+
+    
+</body>
+</html>
