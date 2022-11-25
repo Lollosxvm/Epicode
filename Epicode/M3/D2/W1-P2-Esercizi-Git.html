@@ -1,0 +1,121 @@
+<!-- Git Conflicts Resolution
+
+Con questi esercizi imparerai come i conflitti su Git sono generati e come gestirli in modo efficiente sulla tua
+macchina locale (mac o pc).
+
+Scarica e installa GitHub Desktop se non l'hai ancora fatto e fai il login con le tue credenziali di GitHub
+Crea una nuova respository locale e aggiungi un nuovo file index.html con il seguente codice all'interno: -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<!--  Esegui un commit e push su GitHub del codice appena inserito. Ti verrà chiesto se vuoi mantenere la repository privata, accertati che quella opzione non sia selezionata, 
+ sia per questo esercizio che per tutte le volte che collaborerai ad un progetto con qualcun altro. Dovrai anche aggiungere i tuoi collaboratori nei settings della tua repository.
+ Decidi anche chi seguirà le istruzioni per lo Sviluppatore-A e chi per Sviluppatore-B. Se lavori da solo puoi seguirle entrambe da solo, ma sarà meno realistico. -->
+
+<!-- Sviluppatore-A
+
+ Crea un titolo con un heading tag: Lista della spesa
+ Crea una lista <ul> con due elementi <li>: Latte e Uova
+ 
+ Fai il Commit e Push su branch Main. Il tuo collaboratore potrà ora vedere il codice e incorporare le tue modifiche nella sua Main locale.
+ 
+ Ora, sempre partendo dalla branch Main, crea una nuova branch personale per le nuove modifiche e chiamala "sviluppatore-a".-->
+
+<!-- Sviluppatore-B
+ 
+ Fai il Pull su Main e, sempre partendo da lì, crea una nuova branch chiamata "sviluppatore-b".
+ Ora "sviluppatore-a" e "sviluppatore-b" sono basate sulla stessa branch Main, però da questo punto in poi prenderanno strade diverse! -->
+
+
+<!-- Aggiungi alla lista della spesa questi altri elementi: -->
+
+<!-- 
+        <li>Cake</li>
+        <li>Candy</li>
+        <li>Chips</li>
+        <li>Candy bar</li>
+        <li>Cookie</li> 
+-->
+
+<!-- Dai al titolo lo stile CSS per colorarlo di rosso
+Dai agli <li> il colore di sfondo "aquamarine" e i pallini dei punti di lista rendili quadrati.
+
+Procedi al Commit e Push su "sviluppatore-b"! -->
+
+
+<!-- Sviluppatore-A
+
+Nel frattempo, Sviluppatore-A, sulla tua branch on your "sviluppatore-a", aggiungi questi elementi alla lista della spesa:
+
+        <li>Pane</li>
+        <li>Burro</li>
+        <li>Caffè</li>
+        <li>Té</li>
+
+Dai al titolo lo stile CSS per colorarlo di blu
+Dai agli <li> il colore di sfondo giallo
+Procedi al Commit e Push su "sviluppatore-a"!
+
+Ora torna sulla branch Main e fai il Merge della tua branch "sviluppatore-a" dentro a Main.
+Per farlo seleziona dal menu delle branch: "Choose a branch to merge into main" (è il tasto in fondo al menu). 
+
+Questo dovrebbe andare senza problemi e nessun conflitto!
+Procedi al Commit e Push! Ora Main contiene le modifiche che prima erano solo su "sviluppatore-a"
+
+-->
+
+<!-- Sviluppatore-B
+
+Torna anche tu sulla branch Main e fail il Pull delle nuove modifiche avvenuto con il Merge di prima.
+Procedi a fare il Merge della tua branch "sviluppatore-b" selezionando "Choose a branch to merge into main" dal solito menu delle branch. 
+A questo punto avrai notato che la tua branch non potrà essere unita automaticamente senza conflitti. Dovrai risolvere i conflitti che sono comparsi. -->
+
+
+
+<!-- Clicca su “Open in Visual Studio Code” per aprire il file affetto dal problema in VSCode
+Dovresti vedere qualche linee di codice evidenziata simile a queste:
+
+
+
+
+
+Accept Current Change | Accept Incoming Change | Accept Both Changes
+
+<<<<<<<<<<<<<<<<<<<< HEAD (Current Change)
+
+// code
+
+=========================
+
+// other code
+
+>>>>>>>>>>>>>>>>>>>> branch-name (Incoming Change) 
+
+
+
+
+— "Accept Current Change" manterrà il codice evidenziato in verde, mentre "Accept Incoming Change" quello evidenziato in blu.
+— Puoi accettare entrambi con "Accept Both Changes" ed entrambi i blocchi di codice verranno mantenuti, ma non sempre è possibile tenerli entrambi e potrebbe servire il tuo intervento per sistemarli in ogni caso.
+— Git non sa quale codice mantenere perché entrambi vogliono modificare le stesse linee di codice su Main.
+
+A questo punto è compito tuo sistemare il problema. Il risultato finale su Main dovrebbe essere:
+
+●	 *Una lista della spesa con tutti gli elementi presenti in "sviluppatore-a" e "sviluppatore-b"
+●	 *Colore del titolo blu
+●	 *Colori di sfondo degli elementi della lista: "aquamarine" e punti della lista quadrati
+
+-->
