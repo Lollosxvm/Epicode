@@ -1,25 +1,18 @@
-//how to center a div?
+function myFunction1() {
+    let x = document.getElementById("section1");
+    if (x.style.display === "none") {
+      x.style.display = "flex";
+    } else {
+      x.style.display = "none";
+    }
+  }
 
-text-align: center;
-
-div
-
-margin: 0 auto;
-
-text-align: center;
-
-margin: 0 auto;
-
-0
-
-auto
-
-width
-
-auto
-
-text-align
-
-text-align: center
-
+  function myFunction2() {
+    let x = document.getElementById("section2");
+    if (x.style.display === "none") {
+      x.style.display = "flex";
+    } else {
+      x.style.display = "none";
+    }
+  }
 

@@ -1,4 +1,19 @@
-
 main{
     background-color:beige
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#title1, #title2{
+    margin: auto;
+    width: 50%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+#section2, #section1{
+    display: flex;
+    align-items: center;
+
 }
