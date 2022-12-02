@@ -1,0 +1,21 @@
+#navbarNav > ul > li > a {
+    font-size: large;
+    color:darkblue;
+    font-family : Montserrat;
+}
+
+.jumbotron{
+    min-height: 30vh;
+    background-image: url("/D4/assets/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h1,h2,h3,h4,p,a {
+    font-family: Montserrat;
+
+}
+.title5{
+    text-align: center;
+    margin: 30px;
+    color: darkblue;
+}
