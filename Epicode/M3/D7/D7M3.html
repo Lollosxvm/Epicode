@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D7M3</title>
+    <style>
+        @keyframes loadingC {
+            0 {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(0, 15px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .load-wrapp {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin: 0 10px 10px 0;
+            padding: 20px 20px 20px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #d8d8d8;
+        }
+
+
+        .line {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            background-color: #4b9cdb;
+        }
+
+        .load-3 .line:nth-last-child(1) {
+            animation: loadingC 1s 0.1s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="load-wrapp">
+        <div class="load-3">
+            <div class="line">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
