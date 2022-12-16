@@ -5,7 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D8M3</title>
-    <link rel="stylesheet" href="/D8/style.css">
+    <style>
+        /* define background*/
+
+.bg {
+  background-color: #94bcdc;
+  width: 50vh;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+}
+/* define jumpping ball */
+
+.ball {
+  background-color: #ee2163;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.floor1 {
+  animation: jump 0.75s 0s ease-out infinite;
+}
+/* define shadow ball */
+
+.shadow {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 30px;
+  height: 10px;
+}
+
+.floor2 {
+  animation: shadow 0.75s 0s linear infinite;
+}
+
+/* Keyframes start */
+
+@keyframes jump {
+  0 {
+    -webkit-transform: translate(0,0);
+  }
+  50% {
+    -webkit-transform: translate(0, -150px);
+  }
+  75% {
+    -webkit-transform: scale(1.2, 0.5);
+  }
+  100% {
+    -webkit-transform: translate(0, -150px);
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+@keyframes shadow {
+  0 {
+    -webkit-transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(0, 0);
+    -webkit-transform: scale(1.2, 1.2);
+  }
+  75% {
+    -webkit-transform: translate(0, 0);
+    -webkit-transform: scale(0.5, 0.5);
+    visibility: hidden;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    visibility: hidden;
+  }
+}
+    </style>
 </head>
 <body>
   <div class="bg">
