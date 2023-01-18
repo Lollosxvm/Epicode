@@ -229,3 +229,18 @@ ul {
 .mainPage img {
   width: 200px;
 }
+
+.card-container{
+  width: 250px;
+  min-height: 320px;
+  background-color: rgba(229, 228, 228, 0.651);
+  margin:1rem;
+  border-radius: 5px;
+}
+
+.card-img{
+min-height: 100px;
+background-position:center;
+background-repeat: no-repeat;
+background-size: cover;
+}
