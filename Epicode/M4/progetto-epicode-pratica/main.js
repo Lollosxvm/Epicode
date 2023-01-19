@@ -18,8 +18,8 @@ const submitProduct = document.getElementById('submitProduct');
 const firstCardContainer = document.getElementById('card-list');
 const secondCardContainer = document.getElementById('second-card-list');
 const getButton = document.querySelectorAll('btn');
-const showSecondModal = document.getElementById('updateForm');
-
+const showSecondModal = document.getElementById('secondModal');
+const closeSecondModal = document.getElementById('closeSecondModal')
 
 const createEl = (type, attributes, ...children) => {
     const element = document.createElement(type)
@@ -51,7 +51,7 @@ const createCard = (data, container) => {
             })
         ),
         createEl('p', {}, `${data.description}`),
-        createEl('button', {class :'btn',id:`${data.id}`,type:'radio'},"modifica"),
+        createEl('button', {class :'btn',id:`${data.id}`,type:'radio', onclick: 'updateButton()'},"modifica"),
     ) 
     
 )
@@ -117,11 +117,17 @@ submitProduct.addEventListener('click', event => {
     getDataForm();
 })
 
-getButton.forEach(element=>{
-    element.addEventListener('click', event =>{
+
+
+const updateButton = event => {
+    
+    console.log('start');
     showSecondModal.showModal();
-    })
+} 
+closeSecondModal.addEventListener('click', event => {
+    showSecondModal.close();
 })
+
 // const handleSubmit = (event) => {
 //     event.preventDefault();
   
