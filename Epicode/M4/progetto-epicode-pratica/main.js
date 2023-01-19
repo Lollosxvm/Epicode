@@ -15,8 +15,10 @@ const addCategory = document.getElementById('category');
 const addImage = document.getElementById('image');
 const addPrice = document.getElementById('price');
 const submitProduct = document.getElementById('submitProduct');
-const firstCardContainer = document.getElementById('card-list')
-const secondCardContainer = document.getElementById('second-card-list')
+const firstCardContainer = document.getElementById('card-list');
+const secondCardContainer = document.getElementById('second-card-list');
+const getButton = document.querySelectorAll('btn');
+const showSecondModal = document.getElementById('updateForm');
 
 
 const createEl = (type, attributes, ...children) => {
@@ -49,7 +51,9 @@ const createCard = (data, container) => {
             })
         ),
         createEl('p', {}, `${data.description}`),
-    )
+        createEl('button', {class :'btn',id:`${data.id}`,type:'radio'},"modifica"),
+    ) 
+    
 )
 
 container.appendChild(cardWithText);
@@ -113,6 +117,11 @@ submitProduct.addEventListener('click', event => {
     getDataForm();
 })
 
+getButton.forEach(element=>{
+    element.addEventListener('click', event =>{
+    showSecondModal.showModal();
+    })
+})
 // const handleSubmit = (event) => {
 //     event.preventDefault();
   
