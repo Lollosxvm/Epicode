@@ -1,0 +1,110 @@
+html{
+    font-size: 18px;
+}
+
+body{
+    background: #e0e4e8;
+    font-family: "Proxima Nova", sans-serif;
+}
+
+section{
+    padding: 5rem calc(50vw - 600px);
+}
+
+@media screen and (max-width: 1200px){
+    section{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* CARD LIST LAYOUT */
+
+.card-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.card-list > :not(:first-child){
+    margin-left: .5rem;
+}
+
+.card-list > :not(:last-child){
+    margin-right: .5rem;
+}
+
+.card-list li{
+    flex: 1 1 0;
+}
+
+/* EACH CARD IS A LINK */
+
+.card{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #333;
+    max-width: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: ease-in all .1s;
+    box-shadow:
+            0 1px 1px rgba(0,0,0,0.1),
+            0 2px 2px rgba(0,0,0,0.1);
+}
+
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow:
+            0 2px 2px rgba(0,0,0,0.1),
+            0 4px 4px rgba(0,0,0,0.1),
+            0 8px 8px rgba(0,0,0,0.1),
+            0 16px 16px rgba(0,0,0,0.1),
+            0 32px 32px rgba(0,0,0,0.1);
+}
+
+/* SETTING MARGINS AND CHILD ORDER */
+
+.card > *{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.card > :not(.card-img-cont){
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.card-category{
+    font-weight: bold;
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    opacity: .5;
+}
+
+/* IMAGES HAVE A FIXED RATIO CONTAINER AND THE IMAGE IS ABSOLUTE AND OBJECT-FIT COVER SO ALL IMAGES HAVE SAME SIZE */
+
+.card-img-cont{
+    order: -1;
+    width: 100%;
+    height: 0;
+    padding-bottom: 66%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.card-img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.f-flex{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <h2 class="section-title">Cards con testo</h2>
+        <ul class="card-list" id="second-card-list"></ul>
+    </section>
+
+    <button id="addProduct">Aggiungi Prodotto</button>
+
+    <dialog id="modalAddProduct">
+        <form id="addProductForm" class="f-flex">
+            <label for="title">Insert Title:</label>
+            <input type="text" id="title" name="title">
+
+            <label for="description">Insert Description:</label>
+            <input type="text" id="description" name="description">
+
+            <label for="category">Insert Category:</label>
+            <input type="text" id="category" name="category">
+
+            <label for="image">Insert URL Image:</label>
+            <input type="text" id="image" name="image">
+
+            <label for="price">Insert Price:</label>
+            <input type="text" id="price" name="price">
+
+            <button type="submit" id="submitProduct" value="Submit">Submit</button>
+            <button type="button" id="closeModal">Close</button>
+        </form>
+    </dialog>
+</body>
+<script src="./main.js"></script>
+</html>
