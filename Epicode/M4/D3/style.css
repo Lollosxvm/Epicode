@@ -22,6 +22,16 @@
     margin-bottom: 0;
   }
   
+  .card-img-top{
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position:center center;
+   min-height:250px;
+  }
+  .card-body{
+    background-color:white;
+  }
+
   .jumbotron-heading {
     font-weight: 300;
   }
