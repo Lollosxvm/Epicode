@@ -28,7 +28,7 @@ const createEl = (type, attributes, ...childrens) => {
 
 // creo la card + btn nascondi
 const createCard = (data, container) => {
-    const card = createEl("div", { class: "col-md-4" },
+    const card = createEl("div", { class: "col-md-4"},
         createEl("div", { class: "card mb-4 shadow-sm" },
             createEl("div", { class: "bd-placeholder-img card-img-top", style: `background-image: url(${data.src.medium})` },
             ),
@@ -43,7 +43,7 @@ const createCard = (data, container) => {
                 ))))
     container.appendChild(card)
 }
-//richiedo i dati 2volte e converto ciò che arriva in json 
+//richiedo i dati 1volta per ogni btn (con query diversa) e converto ciò che arriva in json 
 async function loadImages() {
     const data = await fetch(api, options)
     return await data.json()
@@ -55,6 +55,7 @@ async function loadSecondImages() {
 
 //Al click di "Load Images" compaiono le card ed il bottone nacondi funziona su ognuna di essa
 const primoBtn = document.querySelector(".btn-primary.my-2");
+
 primoBtn.addEventListener("click", () => {
     loadImages().then((response) => {
         response.photos.map((photo) => {
@@ -71,33 +72,38 @@ primoBtn.addEventListener("click", () => {
 })
 //Al click di "Load Secondary Images comapiono altre card"
 const secondoBtn = document.querySelector(".btn-secondary.my-2");
+
 secondoBtn.addEventListener("click", () => {
-    loadSecondImages().then((response) => {
-        response.photos.map((photo) => {
-            createCard(photo, Row)
-        })
-        const btnNascondi = document.querySelectorAll(".btn-outline-secondary")
-        btnNascondi.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const card = btn.closest(".col-md-4")
-                card.remove()
+    const querySent =
+        loadSecondImages().then((response) => {
+            response.photos.map((photo) => {
+                createCard(photo, Row)
+            })//creo il btn nascondi e relativo funzionamento
+            const btnNascondi = document.querySelectorAll(".btn-outline-secondary")
+            btnNascondi.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const card = btn.closest(".col-md-4")
+                    card.remove()
+                })
             })
-        })
-    })
+        });
+    if (querySent) {
+        // const cancelCard = document.querySelectorAll("col-md-4")
+        // cancelCard.forEach((card) => {
+        //     btn.addEventListener("click", () => {
+        //         const card = btn.closest("col-md-4")
+        //         card.remove()
+    //         })
+    //     })
+    // } else {
+        
+    // }
 })
 
-//invia dati dal form a Pexels
-async function input() {
-    const data = await fetch(api, options)
-    return await data.json()
-}
-
-//prendo l'input
-const input = document.getElementById("fname");
-    input.addEventListener("change", () =>{
-        
-    })
-
+// async function input() {
+//     const data = await fetch(api, options)
+//     return await data.json()
+// }
 
 
 
