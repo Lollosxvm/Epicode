@@ -1,11 +1,17 @@
-// Implemento l'API
 const api = "https://api.pexels.com/v1/search?query=Ocean"
 const apiDue = "https://api.pexels.com/v1/search?query=Tigers"
 const apiTre = "https://api.pexels.com/v1/search?query="
 const token = "EcZN2xYFacKdjKPus0oMZ7sr38DsS6FG4vcdtWDHFwz6S2FW2VCmmJvp"
-
 const modaleCard = document.getElementById("idModale")
+const secondoBtn = document.querySelector(".btn-secondary.my-2");
+const secondContainer = document.getElementById("secondContainer")
+const query = document.getElementById("fname").value;
+const invio = document.getElementById("invioQuery");
+const thirdContainer = document.getElementById("thirdContainer");
+const primoBtn = document.querySelector(".btn-primary.my-2");
+const Row = document.getElementById("Row");
 
+// Implemento l'API
 const options = {
     method: "GET",
     headers: {
@@ -38,7 +44,7 @@ const createCard = (data, container) => {
                 createEl("p", { class: "card-text" }, `${data.photographer}`),
                 createEl("div", { class: "d-flex justify-content-between align-items-center" },
                     createEl("div", { class: "btn-group" },
-                        createEl("button", { class: "btn btn-sm btn-outline-primary","data-target":"idModale", "data-toggle":"modal" }, "View"),
+                        createEl("button", { class: "btn btn-sm btn-outline-primary", "data-target": "idModale", "data-toggle": "modal" }, "View"),
                         createEl("button", { class: "btn btn-sm btn-outline-secondary", id: data.id }, "Nascondi"),
                     ),
                     createEl("small", { class: "card-text" }, `${data.id}`)
@@ -56,8 +62,6 @@ async function loadSecondImages() {
 }
 
 //Al click di "Load Images" compaiono le card ed il bottone nacondi funziona su ognuna di essa
-const primoBtn = document.querySelector(".btn-primary.my-2");
-const Row = document.getElementById("Row");
 primoBtn.addEventListener("click", () => {
     loadImages().then((response) => {
         response.photos.map((photo) => {
@@ -70,23 +74,14 @@ primoBtn.addEventListener("click", () => {
                 card.remove()
             })
         })
-        // const btnModals = document.querySelectorAll(".btn-outline-primary")
-        // btnModals.forEach((btn) =>{
-        //     btn.addEventListener("shown.bs.modal", () => {
-        //         modaleCard.focus()
-        //     })
-        // })
     })
 })
-//Al click di "Load Secondary Images comapiono altre card"
-const secondoBtn = document.querySelector(".btn-secondary.my-2");
-const secondContainer = document.getElementById("secondContainer")
 
+//Al click di "Load Secondary Images comapiono altre card"
 secondoBtn.addEventListener("click", () => {
     if (Row.children.length > 0) {
         Row.remove()
-    }
-    loadSecondImages().then((response) => {
+    } loadSecondImages().then((response) => {
         response.photos.map((photo) => {
             createCard(photo, secondContainer)
         })//creo il btn nascondi e relativo funzionamento
@@ -100,23 +95,19 @@ secondoBtn.addEventListener("click", () => {
     });
 })
 
-const query = document.getElementById("fname").value;
-const invio = document.getElementById("invioQuery");
-const thirdContainer= document.getElementById("thirdContainer");
+// All'invio del form restituisce le card con la query richiesta
 async function queryUser(input) {
     const data = await fetch(`https://api.pexels.com/v1/search?query=${input}`, options)
     return await data.json()
-}
-invio.addEventListener("click", (e) => {
+} invio.addEventListener("click", (e) => {
     const query = document.getElementById("fname").value;
     console.log(query)
     e.preventDefault();
     queryUser(query).then((response) => {
         console.log(response)
-        if(thirdContainer.hasChildNodes()){
-            thirdContainer.innerHTML="";
-        }
-        response.photos.map(array => createCard(array,thirdContainer))
+        if (thirdContainer.hasChildNodes()) {
+            thirdContainer.innerHTML = "";
+        } response.photos.map(array => createCard(array, thirdContainer))
     })
 })
 
