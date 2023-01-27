@@ -73,5 +73,12 @@ function addToCart(book) {
     cartBtn.innerText = `Carrello (${cart.length})`
 }
 
+////////////////////
 
+const startTime = new Date();
+window.addEventListener("beforeunload",()=>{
+    const endTime = new Date() 
+    const duration = (endTime - startTime ) / 1000
+    localStorage.setItem("durata sessione", duration)
+})
 
