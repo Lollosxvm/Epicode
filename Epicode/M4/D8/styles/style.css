@@ -1,0 +1,40 @@
+#post-form {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-back-office{
+  margin-top: 20px;
+  width: 100%;
+}
+.form-group {
+  width: 100%;
+}
+
+#row {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-body {
+  background-color: white;
+  border-radius: 25px;
+}
+
+.card-img-top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 250px;
+}
+
+p {
+  color: black;
+  margin: auto;
+}
