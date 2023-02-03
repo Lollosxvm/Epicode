@@ -3,6 +3,8 @@ const api = "https://striveschool-api.herokuapp.com/api/product/";
 const pageProduct = "./product.html?q=";
 const container = document.getElementById("container");
 
+
+
 const options = {
     method: "GET",
     headers: {
@@ -21,6 +23,7 @@ async function getData() {
         console.log(error)
     }
 }
+
 getData().then((res) => {
     console.log(res)
     res.map((element) => {

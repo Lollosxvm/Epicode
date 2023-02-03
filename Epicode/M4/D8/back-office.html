@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en" class="h-100">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,29 +19,36 @@
             <h3 class="lead">
                 Here is where the magic comes to life! </h3>
         </main>
-        <!-- post form SX -->
+        <!-- post form  -->
         <form id="post-form">
             <div class="form-group">
                 <label>Name</label>
-                <input name="name" type="text" class="form-control" id="input-name">
+                <input name="name" type="text" class="form-control" id="input-name" required>
                 <label>Description</label>
-                <input type="text" name="description" class="form-control" id="input-description">
+                <input type="text" name="description" class="form-control" id="input-description" required>
                 <label>Brand</label>
-                <input type="text" name="brand" class="form-control" id="input-brand">
+                <input type="text" name="brand" class="form-control" id="input-brand" required>
                 <label>Image Url</label>
                 <input type="text" name="imageUrl" class="form-control" id="input-imageUrl">
                 <label>Price</label>
-                <input type="text" name="price" class="form-control" id="input-price">
+                <input type="text" name="price" class="form-control" id="input-price" required>
                 <button type="submit" id="addProductsBtn" class="btn btn-back-office btn-primary"> Submit new product to
                     inventory
                 </button>
-                <button type="submit" id="addProductsBtn" class="btn btn-back-office btn-danger"> Delete exsisting
-                    product from
-                    inventory</button>
-                <button type="submit" id="addProductsBtn" class="btn btn-back-office btn-success"> Modify exsisting
+                <button type="submit" id="modifyProductsBtn" class="btn btn-back-office btn-success"> Modify exsisting
                     product from
                     inventory</button>
             </div>
+            <!-- delete/modify product form-->
+            <form id="delete-form">
+                <div class="form-group">
+                    <select name="delete-id" id="select-Id"></select>
+                    <button type="submit" id="cancelProductsBtn" class="btn btn-back-office btn-danger"> Cancel
+                        exsisting
+                        product from
+                        inventory</button>
+                </div>
+            </form>
             <footer class="mt-5 text-white-50">
                 <p>Cover template taken by <a href="" class="text-white">Bootstrap</a>, made custom by <a
                         href="https://twitter.com/mdo" class="text-white">Lorenzo S</a>.
